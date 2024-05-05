@@ -74,7 +74,12 @@ Commands which can run on the interpreter
 * Set up multi client
 * Fix Bugs
 * Maybe GUI version
+* Add new functions
 
+# :moneybag: Donate:
+**BTC:** `bc1q5exw2v9sa0yktp2t7xnq8ma2xpn5a29s7w283y`  
+**ETH:** `0x8d797249170d263B959A3c688D8456adBcfBC319`  
+**XMRT:** `0xF978FE35d00A201eB48aB3908993e14f312001a2`  
 
 ## License
 ThawneNET is licensed under MIT license take a look at the [LICENSE](LICENSE) for more information.
