@@ -156,9 +156,21 @@ def main():
                         client_socket.sendall(whois.encode())
                     else:
                         client_socket.sendall("Failed to retrieve information.".encode())
+                elif (received_data.lower().startswith("camlist")):
+                    available_cameras = camera.list_available_cameras()
+                    if available_cameras:
+                        response = "Available Cameras:\n"
+                        for cam in available_cameras:
+                            response += f"Name: {cam['name']}\n"
+                            response += f"Index: {cam['index']}\n"
+                            response += f"FPS: {cam['fps']}\n"
+                            response += f"Width: {cam['width']}\n"
+                            response += f"Height: {cam['height']}\n\n"
+                        client_socket.sendall(response.encode())
+                    else:
+                        client_socket.sendall("No cameras available.".encode())
                 else:
-                    error_message = f"Unknown command {received_data} try again."
-                    client_socket.sendall(error_message.encode())
+                    client_socket.sendall(f"Unknown command {received_data} try again.".encode())
 
         except ConnectionRefusedError:
             retryCount += 1
