@@ -1,8 +1,0 @@
-====================
-           CHANGELOG
-====================
-
-Version 1.0.0 (Released: 05.05.2024):
-
-- Basic RAT
-AutoRun, Hidding Console Window, System Information, IP Information, Battery Status and Percent, ActiveWindow etc..
